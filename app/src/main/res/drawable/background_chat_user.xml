@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by YSN Studio on 5/12/18 4:20 PM
+  ~ Copyright (c) 2018. All rights reserved.
+  ~
+  ~ Last modified 5/12/18 12:09 PM
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape
+            android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+</selector>
