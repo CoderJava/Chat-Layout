@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by YSN Studio on 5/12/18 11:53 AM
+  ~ Copyright (c) 2018. All rights reserved.
+  ~
+  ~ Last modified 5/12/18 11:53 AM
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_container_item_layout_chat_my_self"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/vertical_margin_8dp"
+    android:paddingTop="@dimen/vertical_margin_8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_chat_my_self"
+        android:paddingBottom="@dimen/vertical_margin_8dp"
+        android:paddingLeft="@dimen/horizontal_margin_8dp"
+        android:paddingRight="@dimen/horizontal_margin_8dp"
+        android:paddingTop="@dimen/vertical_margin_8dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/text_view_message_item_layout_chat_my_self"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="#212121"
+            android:text="Message" />
+
+        <TextView
+            android:id="@+id/text_view_date_time_item_layout_chat_my_self"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/text_view_message_item_layout_chat_my_self"
+            android:text="2018-05-12 13:05"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
