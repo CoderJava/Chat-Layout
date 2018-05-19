@@ -7,30 +7,56 @@
 
 package com.ysn.chatlayout
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import com.ysn.chatlayout.adapter.AdapterChat
 import com.ysn.chatlayout.adapter.model.Chat
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var listViewType: MutableList<Int>
+    private lateinit var listChat: MutableList<Chat>
+    private lateinit var adapterChat: AdapterChat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        edit_text_chat_activity_main.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                val idTypeChat = radio_group_activity_main.checkedRadioButtonId
+                val typeChat = if (idTypeChat == R.id.radio_button_my_self_activity_main) {
+                    AdapterChat.VIEW_TYPE_MY_SELF
+                } else {
+                    AdapterChat.VIEW_TYPE_USER
+                }
+                val message = edit_text_chat_activity_main.text.toString().trim()
+                if (message.isEmpty()) {
+                    Toast.makeText(this@MainActivity, "Message is empty", Toast.LENGTH_SHORT)
+                            .show()
+                } else {
+                    val dateTime = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US)
+                            .format(Date())
+                    val chat = Chat(message = message, dateTime = dateTime)
+                    listViewType.add(typeChat)
+                    listChat.add(chat)
+                    adapterChat.notifyDataSetChanged()
+                }
+            }
+            true
+        }
+        setupAdapterRecyclerView()
+    }
 
-        val listViewType = mutableListOf<Int>()
-        listViewType.add(1)
-        listViewType.add(2)
-        listViewType.add(1)
-        listViewType.add(2)
-        val listChat = mutableListOf<Chat>()
-        listChat.add(Chat(message = "Hello", dateTime = "12-05-2018 16:36"))
-        listChat.add(Chat(message = "Hi", dateTime = "12-05-2018 16:40"))
-        listChat.add(Chat(message = "How are you?", dateTime = "12-05-2018 16:41"))
-        listChat.add(Chat(message = "I'm fine, Thanks. You?", dateTime = "12-05-2018 16:42"))
-        val adapterChat = AdapterChat(listViewType = listViewType, listChat = listChat)
+    private fun setupAdapterRecyclerView() {
+        listViewType = mutableListOf()
+        listChat = mutableListOf()
+        adapterChat = AdapterChat(listViewType = listViewType, listChat = listChat)
         recycler_view_chat_activity_main.layoutManager = LinearLayoutManager(this)
         recycler_view_chat_activity_main.adapter = adapterChat
     }

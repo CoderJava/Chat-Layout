@@ -9,16 +9,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_background"
-    android:paddingBottom="@dimen/vertical_margin_8dp"
-    android:paddingLeft="@dimen/horizontal_margin_8dp"
-    android:paddingRight="@dimen/horizontal_margin_8dp"
-    android:paddingTop="@dimen/vertical_margin_8dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_chat_activity_main"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_background_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/vertical_margin_8dp"
+        android:paddingLeft="@dimen/horizontal_margin_8dp"
+        android:paddingRight="@dimen/horizontal_margin_8dp"
+        android:paddingTop="@dimen/vertical_margin_8dp">
+
+        <RadioGroup
+            android:id="@+id/radio_group_activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_my_self_activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="My Self" />
+
+            <RadioButton
+                android:id="@+id/radio_button_user_activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="User" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edit_text_chat_activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Message"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_chat_activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/vertical_margin_8dp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
