@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Created by YSN Studio on 5/12/18 11:26 AM
+  ~ Created by YSN Studio on 5/24/18 9:53 AM
   ~ Copyright (c) 2018. All rights reserved.
   ~
-  ~ Last modified 5/12/18 11:25 AM
+  ~ Last modified 5/23/18 3:28 PM
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,6 +59,29 @@
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_send_message_activity_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Message"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_send_image_activity_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Image"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_chat_activity_main"

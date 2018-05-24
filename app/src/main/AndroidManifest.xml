@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by YSN Studio on 5/12/18 11:26 AM
+  ~ Created by YSN Studio on 5/24/18 9:53 AM
   ~ Copyright (c) 2018. All rights reserved.
   ~
-  ~ Last modified 5/12/18 11:25 AM
+  ~ Last modified 5/24/18 9:46 AM
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ysn.chatlayout">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"

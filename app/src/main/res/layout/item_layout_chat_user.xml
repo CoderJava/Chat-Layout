@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Created by YSN Studio on 5/12/18 4:14 PM
+  ~ Created by YSN Studio on 5/24/18 9:53 AM
   ~ Copyright (c) 2018. All rights reserved.
   ~
-  ~ Last modified 5/12/18 4:14 PM
+  ~ Last modified 5/23/18 3:35 PM
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,15 +34,22 @@
             android:id="@+id/text_view_message_item_layout_chat_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_date_time_item_layout_chat_user"
             android:text="Message"
             android:textColor="@color/colorBlack" />
+
+        <ImageView
+            android:id="@+id/image_view_message_item_layout_chat_user"
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            android:layout_below="@+id/text_view_date_time_item_layout_chat_user" />
 
         <TextView
             android:id="@+id/text_view_date_time_item_layout_chat_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/text_view_message_item_layout_chat_user"
+            android:layout_alignParentTop="true"
             android:text="12-05-2018 16:22"
             android:textStyle="italic" />
 
